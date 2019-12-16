@@ -80,14 +80,17 @@ We denote the sizes of cities at time $t$ as $n_i(t)$, for $i$ in $1,2,3,\dots$
 
 We denote the expected population of a city initiated $t$ ago as $Z(t)$. The transition probability of $P(Z_t = j)$ is $e^{-\beta_2 t}(1-e^{-\beta_2 t})^{j-1}$. 
 
-Using Kolmogorov’s Forward Equation\begin{align}p_t'(1,j) = -\beta_2 j p_t(1,j) + \beta_2 (j-1) p_t(1,j-1).\label{forward}\end{align}  When $j = 1$, we have \[p_t'(1,1) = -\beta_2 p_t(1,1), \] which leads to $p_t=e^{-\beta_2}$. When $j>1$, we differentiate $P(Z_t = j)$ to have 
+Using Kolmogorov’s Forward Equation
+\begin{align}p_t'(1,j) = -\beta_2 j p_t(1,j) + \beta_2 (j-1) p_t(1,j-1).\label{forward}\end{align}  When $j = 1$, we have \[p_t'(1,1) = -\beta_2 p_t(1,1), \] which leads to $p_t=e^{-\beta_2}$. When $j>1$, we differentiate $P(Z_t = j)$ to have 
 \begin{align}
 	\frac{dP(Z_t = j)}{dt} &= -\beta_2e^{-\beta_2 t} (1-e^{-\beta_2 t})^{j-1} + e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-2}\beta_2 e^{-\beta_2 t}\notag\\
 	&= -\beta_2 e^{-\beta_2 t}(1-e^{-\beta_2 t})^{j-1} + e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-2} [-(1-e^{-\beta_2 t})\beta_2+\beta_2]\notag\\
 	&= -\beta_2 e^{-\beta_2 t}(1-e^{-\beta_2 t})^{j-1} -\beta_2 e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-1} +\beta_2e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-2}\notag\\
 	&= -\beta_2 j e^{-\beta_2 t}(1-e^{-\beta_2 t})^{j-1} +\beta_2e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-2}
 \end{align}
-which copes with equation \ref{forward}. Thus we complete the proof of the probability distribution of a city's population. The probability distribution of the region's population is easy to find according to the given result.
+which copes with equation \ref{forward}. Thus we complete the proof of the probability distribution of a city's population. The probability distribution of the region's population is easy to find according to the given result. The probability distribution of registering $j$ people in $i$ cities at time $t$, is \[ P_t(i,j) = \left(\begin{array}{c}{j-1} \\ {i-1}\end{array}\right)\left(e^{-\beta t}\right)^{i}\left(1-e^{-\beta t}\right)^{j-i}. \]
+
+Moreover, tuning the mechanism from pure birth to birth-death process, we can receive a different scaling facter.
 
 \subsection{proof for Clark's law}
 
