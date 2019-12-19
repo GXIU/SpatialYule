@@ -117,6 +117,13 @@ which turns out to be a exponential distribution. We can interpret it as the loc
 
 By alternating the distributions of step length, we can reproduce other forms of people density distributions. A more skewed distribution of $r$ brings a Levy-like mobility pattern. In particular, a power law mobility distribution brings a Zipf's density distribution $\rho '(R)\sim R^{-\gamma}$\cite{PhysRevX.4.011008}, where $\gamma$ is the scaling factor.  In the following part, we focus on global characteristics to derive the area and population distributions among communities.
 
+On the other hand, we consider the individual level expansion at urban edges. We denote that the distance between the first and the furthest node of a city as $O$ and $F$, respectively, and the moment that $F$ lands its first offspring as $t+\tau$, where $t$ is the moment that $F$ is landed. We investigate the radius of the city, which is defined by the distance between $O$ and $F$. The radius of a city at time $t$, $R_t$, changes to $R_{t+\tau}$ when the offspring is given birth. The expectation of $R_{t+\tau}$ goes as 
+\begin{align}
+	E R_{t+\tau} &= \int_0^{\frac{\pi}{2}} \sqrt{(R_t+r\cos\theta)^2+(r\sin\theta)^2} d\theta \notag \\
+	&= \sqrt{2 R_t r} \int_{0}^{\frac{\pi}{2}} \sqrt{\frac{R_{t}}{2 r}+\frac{r}{2 R_{t}}+\cos \theta} d \theta \notag\\
+	&= 2(R_t+r) E\left(\pi/4| \frac{4R_t r}{(R_t+r)^2}\right)
+\end{align}
+
 \subsection{Numerical verification}
 
 The decay ratio, to be specified, is inverse proportional to the step length of individual mobility, $r$. If we take the construction speed of a city as a constant, the city expands faster when the buildings are flat, which turns out to be the case that the variable $r$ is larger. In reality, Los Angeles is a perfect illustrator for this case while Manhattan tells the opposite tale of smaller $r$.
