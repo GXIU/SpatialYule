@@ -61,11 +61,11 @@ SYM reformulate an important inter-city relationship named the Zipf's law of pop
 	f(n)=\frac{\beta\Gamma(1+\beta)\Gamma(n)}{\Gamma(n+1+\beta)}\approx Cn^{-1-\beta}, \ \text{as } n\rightarrow\infty,
 \end{align}
 where $\Gamma(\cdot)$ is the gamma function. Since $\beta$ can be anything positive, we can derive different scaling behaviors by switching $\beta$. The experiments have confirmed our analytic results for the first phase in SYM. A simulated validation for this result can be reflected in pic. \ref{fig:rankditribution}. 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=0.48\textwidth]{pics/zipf.pdf}
+    \caption{The population distribution as a function of distance from a district's center. The vertical axis is logarithmic processed, which represents the exponential decaying of population distribution. Regardless of the finite-sample effect, we fit the middle part of population density's spatial distribution to the exponential distribution with a slope of $-0.95$, which approximately equals to $1-1/\beta$. This fit has a confidential measurement of $R^2=0.99$.}
     \label{fig:rankditribution}
-	\caption{The population distribution as a function of distance from a district's center. The vertical axis is logarithmic processed, which represents the exponential decaying of population distribution. Regardless of the finite-sample effect, we fit the middle part of population density's spatial distribution to the exponential distribution with a slope of $-0.95$, which approximately equals to $1-1/\beta$. This fit has a confidential measurement of $R^2=0.99$.}
 \end{figure}
 
 
@@ -89,8 +89,8 @@ This is a reinvention of \emph{the Clark's} law in empirical urban studies\cite{
 \begin{figure}
     \centering
     \includegraphics[width=0.48\textwidth]{pics/kernal_density.pdf}
-    \label{fig:clark}
     \caption{The distribution of population among communities. In the simulation we take $N = 10^5$, $\beta_2=1$ and $\beta_1 = 2$. The theoretical prediction of the slope is $-1.5$, and is well approximated by the simulation results.}
+    \label{fig:clark}
 \end{figure}
 
 %% mk
@@ -104,5 +104,5 @@ This \emph{letter} concludes the urban system dynamics with only three key compo
 
 The memory kernel mechanism leads to a straightforward corollary that the construction of infrastructure is temporarily ahead of population, as only the people recorded in the kernel are considered as productive people who attract new-comers in the future. This result provides a bottom-up explanation of transition of urban centers. It also tells that the economic growth is a determining factor of human society. Under the circumstances of preferential attraction, if the size of the memory kernel cannot grow fast enough to match with population, the concentration of production will go far from tolerance.
 
-\bibliography{ref.bib}
+\bibliography{refs.bib}
 \end{document}
