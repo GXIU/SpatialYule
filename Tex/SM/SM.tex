@@ -1,6 +1,6 @@
-\documentclass[aps,prl]{revtex4-1}
+\documentclass[aps,prl]{revtex4-2}
 \usepackage{graphicx,amssymb,amsmath}
-\bibliographystyle{apsrev4-1}
+\bibliographystyle{apsrev4-2}
 \renewcommand*{\citenumfont}[1]{S#1}
 \renewcommand*{\bibnumfmt}[1]{[S#1]}
 
@@ -56,7 +56,7 @@ Phase one of urban growth is in dealing with the case that urban growth over a g
 	\caption{An example of an \emph{intrusion}: at some random time, a node $E$ reproduces a new node spatially out side the origin block it belongs to. As shown in the figure, this quantity highly relies on the scale of this problem: if $r \ll \frac{L}{n}$, this probability will be approximately $0$. On the other hand, if $r$ is large enough, the probability will be meaningless since the odd that it landing on the same block will be zero. So this quantity is a good reflection of scaling property of the system. }\label{fig:intrusion_eg}
 \end{figure}
 
-The intrusion probability is defined as an arbitrary node produces a new node outside the block it belongs to. See the illustration in \ref{fig:intrusion_eg}.
+The intrusion probability is defined as an arbitrary node produces a new node outside the block it belongs to. See the illustration in\@\ref{fig:intrusion_eg}.
 
 
 
@@ -70,7 +70,7 @@ The probability of intrusion can be implemented as follows, we temporarily set t
 \end{align}
 where $\vec{r}=(x,y)$ represents the position that the old node is located, and $(r,\theta)$ is the relative position of the new node to the old node. The quantity $p\left(r\cos\theta+x>\frac{2}{L}|\vec{r}\right)$ equals to $p\left(\theta<\arccos\left(\frac{L/2-x}{r}\right)\right)$. From here, we can see that as the ratio $L/r$ is the determination of a species' intrusion. When  real life case is considered, $r$ varies across species. In this case, the ratio $L/r$ serves as the intrusion tendency of each species. 
 
-The formula \ref{d1} derivated above tell us the \emph{arcsin} law of intrusion.
+The formula \@\ref{d1} derivated above tell us the \emph{arcsin} law of intrusion.
 
 \subsection{Derivation for Zipf's law of urban rank sizes}
 
