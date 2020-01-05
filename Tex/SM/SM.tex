@@ -32,11 +32,11 @@
 In this Supplementary Material, we provide details on ideas of model formulation, methodology, proofs, and empirical tests for the Letter Memory Matters for Cities.
 \section{Details on the simulations}
 
-The simulation results presented here are obtained in the following way. Instead of conducting the designed protocol, we do it in an equivalent way by stretching timeline to events labeled in integer. At each timestep, we first decide if we add a new city, with probability $p(S)$, or a new meta-population to the existing city, with probability $1-p(S)$. The probability $p(S)$ is determined by the total regionsal population and number of cities, $$\frac{k\beta_1}{k\beta_1+N\beta_2}.$$ If a city is to be built, the place of it is randomly chosen at an empty spot. By empty we mean the block of the spot contains no existing node. If it is a new node to be generated, we first determine its ancestor node, and land it at $(r,\theta)$ of the ancestor node, where $r$ is constant and $\theta$ is a realization of a uniform distributed random variable $\mathcal{U}[0,2\pi]$. 
+The simulation results presented here are obtained in the following way. Instead of conducting the designed protocol, we do it in an equivalent way by stretching timeline to events labeled in integer. At each timestep, we first decide if we add a new city, with probability $p(S)$, or a new meta-population to the existing city, with probability $1-p(S)$. The probability $p(S)$ is determined by the total regional population and number of cities, $\frac{k\beta_1}{k\beta_1+N\beta_2}$. If a city is to be built, the place of it is randomly chosen at an empty spot. By empty we mean the block of the spot contains no existing node. If it is a new node to be generated, we first determine its ancestor node, and land it at $(r,\theta)$ of the ancestor node, where $r$ is constant defalut as $0.5$ and $\theta$ is a realization of a uniform distributed random variable $\mathcal{U}[0,2\pi]$. 
 
 The simulation results present in these supplementary materials are completed in the following way. We first obtain the (1) \emph{events} in the process and then label them with (2) timestamps. We first talk about how we label them. 
 
-We denote the number of cities at the $n$th event as $k(n)$. We first determine the type of event, an establishment of a new city or an addition of meta-population. If it is an addition of 
+We denote the number of cities at the $n$'th event as $k(n)$. We first determine the type of event, an establishment of a new city or an addition of meta-population. If it is an addition of 
 
 \begin{figure}
 	\centering
@@ -94,7 +94,7 @@ which copes with equation \ref{forward}. Thus we complete the proof of the proba
 
 Moreover, tuning the mechanism from pure birth to birth-death process, we receive a different scaling facter.
 
-\subsection{proof for Clark's law}
+\subsection{Proof for Clark's law}
 
 In this part, we use the mean-field approach to derive the spatial distribution of population within a species. This quantity can be interpreted as the spatial distribution mode of a species. 
 
@@ -143,11 +143,11 @@ The spatial competition is completed through the order of comers in edging areas
 
 The spatial competition between cities can be abstracted as follows: the ownership of 
 
-\section{Spatial coherence}
+% \section{Spatial coherence}
 
 \section{Phase two: resource restrictions}
 
-\subsection{superior switching} 
+\subsection{Turnover rate} 
 
 Regional development is complex and is affected by different determinants in different time. For example, in Hebei province of China, the largest city Shijiazhuang started to develop fast since it is the crossroad of railways. We interpret this as the redistribution of social resource. 
 
