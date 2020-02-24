@@ -8,7 +8,7 @@
 \begin{document}
 
 
-\title{Supplementary Material\\Memory Matters for Cities}
+\title{Supplementary Material\\Vicissitudes of Cities Driven by Re-distributive Growth}
 \date{\today}
 \author{Gezhi Xiu, Jianying Wang, Lei Dong}
 % \email{xiugz@pku.edu.cn}
@@ -16,7 +16,7 @@
 
 \author{Yu Liu}
 \email{liuyu@urban.pku.edu.cn}
-\affiliation{IRSGIS, Peking University, Beijing, China}
+\affiliation{Institute of Remote Sensing and Geographic Information Systems (IRSGIS), Peking University}
 % \altaffiliation{CAMS (CNRS/EHESS) 190-198, avenue de France, 75244 Paris Cedex 13, France}
 
 \pacs{} 
@@ -35,6 +35,10 @@
 
 We consider the active population over the whole region as working population. The generation speed of population is $N^*\beta_2 + k\beta_1$. Thus the population is refreshing, leading to a constant expected age of \[N^*/\beta'\] for $\beta' := (N^*\beta_2 + k\beta_1)/N^*+k$. This leads to a practical implication that the working age allowed in cities shall be related with the sum of working offer from central government of a region. For instance, in the United States, the regressive value of $\beta$ is around $0.04$. We assume that the working years of a person is 40 years, the expected $N^*$ for the United States is 1,600 units, i.e., 4 millions distributive working opportunities in all cities.
 
+
+\section{Details on the simulations}
+
+The simulation results presented here are obtained in the following way. Instead of conducting the designed protocol, we do it in an equivalent way by stretching timeline to events labeled in integer. At each time step, we first decide if we add a new city, with probability $p(S)$, or a new meta-population to the existing city, with probability $1-p(S)$. The probability $p(S)$ is determined by the total regional population and number of cities, $\frac{k\beta_1}{k\beta_1+N\beta_2}$. If a city is to be built, the place of it is randomly chosen at an empty spot. By empty we mean the block of the spot contains no existing node. If it is a new node to be generated, we first determine its ancestor node, and land it at $(r,\theta)$ of the ancestor node, where $r$ is constant default as $0.5$ and $\theta$ is a realization of a uniform distributed random variable $\mathcal{U}[0,2\pi]$. The new generations of nodes are accompanied with a record in the memory kernel (MK).
 
 
 
