@@ -2,7 +2,6 @@
 \usepackage{graphicx}% Include figure files
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{subfigure}
-\usepackage[position=t,singlelinecheck=off]{subfig}
 \usepackage{bookmark}
 % \usepackage{biblatex}
 \usepackage{float}
@@ -10,8 +9,6 @@
 \usepackage{bm}% bold math
 \usepackage{hyperref}% add hypertext capabilities
 \usepackage[mathlines]{lineno}% Enable numbering of text and display math
-
-\renewcommand\thesubfigure{\Alph{subfigure}}
 
 \begin{document}
 
@@ -81,11 +78,10 @@ The populations of cities typically decay proportionally to the inverse of their
 \end{align}
 where $\Gamma(\cdot)$ is the gamma function. This implies a Zipf's relationship with $n(\text{rank})\sim {rank}^{-\beta}$. Noticing that $\beta$ takes value from all positive real number in SYM, we can derive arbitrary scaling behaviors by switching $\beta$. According to some existing studies\cite{PhysRevLett.79.523}, the power law dependence of population frequency is $2.03\pm 0.05$ for the world, indicating the average relative emerging rate of cities is around $1.03$. 
 
-Varying $\beta$ leads to the consideration of different sizes of study area. A small $\beta$ means the emergence of cities is fast, which corresponds to a large spatial scale. The problem of determining the relative speed of city's generation, is very reminiscent of some problems encountered in gas physics. It is interesting to investigate the number of cities in a given regions of the same population. Some groups tend to form new cities to have sufficient infrastructures and less diversity of urban output ($\beta > 1$) and some cities may go otherwise ($\beta< 1$). This value is actually a reflection of the intensity of regional industry. The experiments have confirmed our analytic results for the first phase in SYM. A simulated validation for this result can be reflected in Fig.\@\ref{zipf-clark}. Notably, for increasing $\beta$s, the simulated Zipfian exponents are remarkably larger than their theoretical predictions. This is because the competition for space benefits large small cities resulted from their higher density of edging cells, but large $\beta$s the probability of successful emergence of small cities drop. This exasperate the concentration of active population in large cities.
+Varying $\beta$ leads to the consideration of different sizes of study area. A small $\beta$ means the emergence of cities is fast, which corresponds to a large spatial scale. The problem of determining the relative speed of city's generation, is very reminiscent of some problems encountered in gas physics. It is interesting to investigate the number of cities in a given regions of the same population. Some groups tend to form new cities to have sufficient infrastructures and less diversity of urban output ($\beta > 1$) and some cities may go otherwise ($\beta< 1$). This value is actually a reflection of the intensity of regional industry. The experiments have confirmed our analytic results for the first phase in SYM. A simulated validation for this result can be reflected in Fig.\@\ref{fig:rankditribution}. Notably, for increasing $\beta$s, the simulated Zipfian exponents are remarkably larger than their theoretical predictions. This is because the competition for space benefits large small cities resulted from their higher density of edging cells, but large $\beta$s the probability of successful emergence of small cities drop. This exasperate the concentration of active population in large cities.
 \begin{figure}[t]
-	\captionsetup[subfigure]{labelformat=simple}
 	\centering
-	\includegraphics[width = .99\linewidth]{./pics/zipf_clark.pdf}
+	\includegraphics[width = .99\linewidth]{sym_suggested_LD/pics/zipf_clark.pdf}
 % 	\subfigure[Rank]{
 % 		\begin{minipage}[t]{0.98\linewidth}
 % 			\centering
@@ -101,7 +97,6 @@ Varying $\beta$ leads to the consideration of different sizes of study area. A s
 % 	\end{minipage}%
 % }
 	\caption{\textbf{(a)} The distribution of population among cities. In the simulation we take $N^* = 10^5$ and alternate $\beta$s. The realistic Zipf's coefficient is reproduced when $\beta\approx 1$. The theoretical predictions of the slopes are $-\beta$, and is well approximated when $\beta$s are small. Larger $\beta$ reduce the chance of latter city's emergence. Thus the spatial aspects of the SYM strengthen inequality. This result confirms that Zipf's law is valid for growing urban systems where all cities share the same rate to grow. From the other master equation we analyze that this observation vanishes if total growing force is finite. \textbf{(b)} The population distribution as a function of distance from a district's center. The vertical axis is logarithmic processed, which represents the exponential decaying of population distribution. Regardless of the finite-sample effect, we fit the middle part of spatial population density to the exponential distribution with a slope of $-1.076$.}
-	\label{zipf-clark}
 \end{figure}
 
 %% clark
@@ -114,7 +109,7 @@ Population density evolves as two-dimensional diffusion within a city\cite{doi:1
 \begin{align}
 	\rho(d)\sim e^{-\alpha d}\label{clark_eq}.
 \end{align}
-This is a reinvention of Clark's law in empirical urban studies\cite{clark1951urban}. Beyond solitary growth, we analyze the competitiveness of land for different cities. The population within an edging cell of city $j$ is estimated by $e^{(T-T_j)}\int_{d}^{d+1}\rho(r)dr/(2\pi d)$, where $T_j$ is the emerging time of city $j$. We also have the waiting time $T_{n+1}-T_{n}\sim 1/n$, and the total population approximation $e^{\beta_1+\beta_2}$, combining which we derive the density of edging cells if time and the urban radius are given. Since the attractiveness of large urban center is larger, the edging population of large cities is actually smaller than minor cities. We validate our prediction with simulations in Fig.\@\ref{zipf-clark}. %We give a detailed derivation in Appendix B\ref{edge_comp}.
+This is a reinvention of Clark's law in empirical urban studies\cite{clark1951urban}. Beyond solitary growth, we analyze the competitiveness of land for different cities. The population within an edging cell of city $j$ is estimated by $e^{(T-T_j)}\int_{d}^{d+1}\rho(r)dr/(2\pi d)$, where $T_j$ is the emerging time of city $j$. We also have the waiting time $T_{n+1}-T_{n}\sim 1/n$, and the total population approximation $e^{\beta_1+\beta_2}$, combining which we derive the density of edging cells if time and the urban radius are given. Since the attractiveness of large urban center is larger, the edging population of large cities is actually smaller than minor cities. We validate our prediction with simulations in Fig.\@\ref{fig:clark}. %We give a detailed derivation in Appendix B\ref{edge_comp}.
 Investigating $r$, we conclude that the metropolis areas over the world have very different densities. In SYM, it determines the sprawl of a city with given population. It can also be taken as the area proportion for a city in the studied region. On the other hand, it is also constraint of regional growth controlling the expected allowance of cities. 
 
 \subsection{The economic constraint phase}
@@ -125,7 +120,7 @@ The kernel mechanism also plays a role at the cross-city scale: The preference o
 
 \begin{figure}
 	\centering
-	\includegraphics[width = 0.5\textwidth]{./pics/in_one_now_now.pdf}
+	\includegraphics[width = 0.5\textwidth]{sym_suggested_LD/pics/in_one_now_now.pdf}
 	\caption{The change rate statistics with and without a memory kernel. The kernel keeps turning over more often. With same $\beta$'s, a kernel-based SYM's decay in turnover rate is smaller. These results validate our prediction that with finite resource, advantages are more likely to be kept.}
 	\label{changerate}
 \end{figure}
@@ -150,10 +145,10 @@ The memory kernel mechanism leads to a straightforward corollary that the constr
 Taking the productive aspect together in the memory kernel helps to talk about many other properties like the age structure. The stationary age can be calculated as the average time for a new city to emerge is $(\beta_2 N^* + \beta_1 k)^{-1}$, which equals to the average losing age of the whole kernel. This result gives an instruction of the length of workable age in a given social urban system.
 
 % 不足
-Although our results are not all analytically proved, we believe it is an essential step to strip out the power of urban dynamics. The model is non-commuting, but the community structure is naturally embedded. For further consideration, we can extend the model by adding links as the volume of exploration and preferential return between cities\cite{WANG2019121921}. The model can further be extended with multi-dimensional memory kernel, allowing one citizen to be introduced if different factors\cite{tokita2020social} (i.e., the existing citizens in different dimension of kernel) agree to allow her in the system.
+Although our results are not all analytically proved, we believe it is an essential step to strip out the power of urban dynamics. The model is non-commuting, but the community structure is naturally embedded. For further consideration, we can extend the model by adding links as the volume of exploration and preferential return between cities\cite{WANG2019121921}. The model can further be extended with multi-dimensional memory kernel, allowing one citizen to be introduced if different factors\cite{doi:10.1098/rsif.2019.0564} (i.e., the existing citizens in different dimension of kernel) agree to allow her in the system.
 
 
 
-\bibliography{ref.bib}
+\bibliography{refs.bib}
 
 \end{document}
