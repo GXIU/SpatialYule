@@ -2,6 +2,7 @@
 \usepackage{graphicx}% Include figure files
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{subfigure}
+\usepackage[position=t,singlelinecheck=off]{subfig}
 \usepackage{bookmark}
 % \usepackage{biblatex}
 \usepackage{float}
@@ -9,6 +10,8 @@
 \usepackage{bm}% bold math
 \usepackage{hyperref}% add hypertext capabilities
 \usepackage[mathlines]{lineno}% Enable numbering of text and display math
+
+\renewcommand\thesubfigure{\Alph{subfigure}}
 
 \begin{document}
 
@@ -80,6 +83,7 @@ where $\Gamma(\cdot)$ is the gamma function. This implies a Zipf's relationship 
 
 Varying $\beta$ leads to the consideration of different sizes of study area. A small $\beta$ means the emergence of cities is fast, which corresponds to a large spatial scale. The problem of determining the relative speed of city's generation, is very reminiscent of some problems encountered in gas physics. It is interesting to investigate the number of cities in a given regions of the same population. Some groups tend to form new cities to have sufficient infrastructures and less diversity of urban output ($\beta > 1$) and some cities may go otherwise ($\beta< 1$). This value is actually a reflection of the intensity of regional industry. The experiments have confirmed our analytic results for the first phase in SYM. A simulated validation for this result can be reflected in Fig.\@\ref{zipf-clark}. Notably, for increasing $\beta$s, the simulated Zipfian exponents are remarkably larger than their theoretical predictions. This is because the competition for space benefits large small cities resulted from their higher density of edging cells, but large $\beta$s the probability of successful emergence of small cities drop. This exasperate the concentration of active population in large cities.
 \begin{figure}[t]
+	\captionsetup[subfigure]{labelformat=simple}
 	\centering
 	\includegraphics[width = .99\linewidth]{./pics/zipf_clark.pdf}
 % 	\subfigure[Rank]{
