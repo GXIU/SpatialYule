@@ -1,0 +1,66 @@
+\begin{widetext}
+
+\section*{Appendix}
+
+The proofs presented in this section are all derived from the mean field approximations, which differ somehow from the simulated results. Their significance is the null results without random factors such as the spatial conditions.
+
+\subsection{Zipf's law}
+
+Zipf's law is the rank size distribution of cities. Denote by $q_m$ the number of cities having $m$ citizens, then $R(m) = \int_m^\infty q(m')dm'$ defines the rank. Empirically, $R(m)\sim m^{-1}$. The more populated a big city is, the more it is favored by up-comers. In study of city size distributions, SYM is a realization of \emph{the rich get richer} rule, for the city's growth rate increase proportionally with its present population. Thus, it is similar for cities size distributions to follow Zipf's law. 
+
+The wait time for the $n$th citizen of a city to be born since the $n-1$th is $\frac{1}{\beta_2(n-1)}$. So inversely the expected population of a city at time $t$ is $e^{t\beta_2}$. We denote the sizes of cities at time $t$ as $n_i(t)$, for $i$ in $1,2,3,\dots$. Meanwhile, we denote the expected population of a city initiated $t$ ago as $Z(t)$. The transition probability of $P(Z_t = j)$ is $e^{-\beta_2 t}(1-e^{-\beta_2 t})^{j-1}$. Using Kolmogorov’s Forward Equation
+\begin{align}p_t'(1,j) = -\beta_2 j p_t(1,j) + \beta_2 (j-1) p_t(1,j-1).\label{forward}\end{align}  When $j = 1$, we have \[p_t'(1,1) = -\beta_2 p_t(1,1), \] which leads to $p_t=e^{-\beta_2}$. When $j>1$, we differentiate $P(Z_t = j)$ to have 
+\begin{align}
+	\frac{dP(Z_t = j)}{dt} &= -\beta_2e^{-\beta_2 t} (1-e^{-\beta_2 t})^{j-1} + e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-2}\beta_2 e^{-\beta_2 t}\notag\\
+	&= -\beta_2 e^{-\beta_2 t}(1-e^{-\beta_2 t})^{j-1} + e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-2} [-(1-e^{-\beta_2 t})\beta_2+\beta_2]\notag\\
+	&= -\beta_2 e^{-\beta_2 t}(1-e^{-\beta_2 t})^{j-1} -\beta_2 e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-1} +\beta_2e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-2}\notag\\
+	&= -\beta_2 j e^{-\beta_2 t}(1-e^{-\beta_2 t})^{j-1} +\beta_2e^{-\beta_2 t}(j-1)(1-e^{-\beta_2 t})^{j-2}
+\end{align}
+which copes with equation \ref{forward}. Thus we complete the proof of the probability distribution of a city's population. The probability distribution of the region's population is easy to find according to the given result. The probability distribution of registering $j$ people in $i$ cities at time $t$, is \[ P_t(i,j) = \left(\begin{array}{c}{j-1} \\ {i-1}\end{array}\right)\left(e^{-\beta t}\right)^{i}\left(1-e^{-\beta t}\right)^{j-i}. \] 
+
+Moreover, tuning the mechanism from pure birth to birth-death process, we receive a different scaling factor.
+
+\subsection{Clark's law}
+
+In this part, we use the mean-field approach to derive the spatial distribution of population within a species. This quantity can be interpreted as the spatial distribution mode of a species. The good thing about the mean-field approach is that we can use the potential concept to derive some conclusions. Here, we regard the growing mechanism as a multi-dimensional binary tree. On each dimension, the tree's $i$th layer has $i$ potential nodes. The probability on the $i$th node's generation is is the average of the two nearest nodes' potential generation probability. Basing on the homogeneity of the choice of $\theta$, the derivation along different axis is the same. Within each city, the spatial distribution of people are captured by the introducing mechanism, $(r,\theta)$. Clark's law\cite{clark1951urban} and some variations for multi-centered models\cite{griffith1981modelling} are empirical clues that correspond to such spatial distributions. Here we reformulate the Clark's law under spatial Yule principles. Since the isotropic setting, the derivation is only needed in one dimension added on a Doppler effect. When spatial constraints are neglected, the expected density distribution along an axis from the origin has an exponential form,$\rho (R)\sim e^{-\alpha R}$. We start the discussion as a node being placed on a broad area. Regardless of adding nodes on else axis, the second is placed at $r$ right-side of the first with a probability of $1/2$. Along this axis, the $n$th node is placed at $k$ from the right end with $C_n^k/2^n$. Using the Stirling formula, it approximately equals to \begin{align}
+    & \frac{n^{n+1/2}}{\sqrt{2\pi}k^{k+1/2}(n-k)^{n-k+1/2}}\notag                         \\
+=    & \frac{n-k}{k+1}\frac{(1+\frac{1}{n-1-k})^{-k-1/2}}{(1+\frac{1}{k})^{n-k-1/2}}\notag \\
+=    & \frac{n-k}{k+1}\frac{(1+\frac{1}{n-1-k})^{n-k-1/2}}{(1+\frac{1}{k})^{k+1/2}}\notag  \\
+\sim & e^{-k},
+\end{align}
+which turns out to be a exponential distribution. We can interpret it as the local properties of spatial Yule model is a discrete version of a maximum entropy system, since the Clark's law can also be derived by maximum entropy principle\cite{merity2009accurate}. Recalling the simple mobility assumption as random walk in random direction, we show that individual-level diffusion process can be approximated by the sum of really simple moves.This is a non-trivial result since this is not derived by mean field approach but by random walk assumption of human mobility. To make it precise, at the early stage of the process, a new community can land near the centre of an existing one. In reality, two communities that are too adjacent are sometimes illustrated as two \emph{districts} in the same city. In our model, a set of communities that destruct others' roundness functions the same with districts within one city. 
+
+By alternating the distributions of step length, we can reproduce other forms of people density distributions. A more skewed distribution of $r$ brings a Levy-like mobility pattern. In particular, a power law mobility distribution brings a Zipf's density distribution $\rho '(R)\sim R^{-\gamma}$\cite{PhysRevX.4.011008}, where $\gamma$ is the scaling factor.  In the following part, we focus on global characteristics to derive the area and population distributions among communities.
+
+\subsection{Competition at the edges}
+We consider the individual level expansion at urban edges. We denote that the distance between the first and the furthest node of a city as $O$ and $F$, respectively, and the moment that $F$ lands its first offspring as $t+\tau$, where $t$ is the moment that $F$ is landed. We investigate the radius of the city, which is defined by the distance between $O$ and $F$. The radius of a city at time $t$, $R_t$, changes to $R_{t+\tau}$ when the offspring is given birth. The expectation of $R_{t+\tau}$ goes as 
+\begin{align}
+	E R_{t+\tau} &= \int_0^{\frac{\pi}{2}} \sqrt{(R_t+r\cos\theta)^2+(r\sin\theta)^2} d\theta \notag \\
+	&= \sqrt{2 R_t r} \int_{0}^{\frac{\pi}{2}} \sqrt{\frac{R_{t}}{2 r}+\frac{r}{2 R_{t}}+\cos \theta} d \theta \notag\\
+	&= 2(R_t+r) \mathbb{E}\left(\pi/4| \frac{4R_t r}{(R_t+r)^2}\right)
+\end{align}where $\mathbb{E}$ is the elliptic function. We find that it decreases as $r$ increases. So that the smaller cities have more active edging cells.
+
+\subsection{Average Age within the Memory Kernel}
+
+We consider the active population over the whole region as working population. The generation speed of population is $N^*\beta_2 + k\beta_1$. Thus the population is refreshing, leading to a constant expected age of \[N^*/\beta'\] for $\beta' := (N^*\beta_2 + k\beta_1)/N^*+k$. This leads to a practical implication that the working age allowed in cities shall be related with the sum of working offer from central government of a region. For instance, in the United States, the regressive value of $\beta$ is around $0.04$. We assume that the working years of a person is 40 years, the expected $N^*$ for the United States is 1,600 units, i.e., 4 millions distributive working opportunities in all cities.
+
+
+\section{Details on the simulations}
+
+The simulation results presented here are obtained in the following way. Instead of conducting the designed protocol, we do it in an equivalent way by stretching timeline to events labeled in integer. At each time step, we first decide if we add a new city, with probability $p(S)$, or a new meta-population to the existing city, with probability $1-p(S)$. The probability $p(S)$ is determined by the total regional population and number of cities, $\frac{k\beta_1}{k\beta_1+N\beta_2}$. If a city is to be built, the place of it is randomly chosen at an empty spot. By empty we mean the cell of the spot contains no existing node. If it is a new node to be generated, we first determine its ancestor node, and land it at $(r,\theta)$ of the ancestor node, where $r$ is constant default as $0.5$ and $\theta$ is a realization of a uniform distributed random variable $\mathcal{U}[0,2\pi]$. The new generations of nodes are accompanied with a record in the memory kernel (MK).
+
+
+\section{Illustrations for the economic constrained phase}
+
+\subsection{Turnover rate} 
+
+Regional development is complex and is affected by different determinants in different time. For example, in Hebei province of China, the largest city Shijiazhuang started to develop fast since it is the crossroad of railways. We interpret this as the redistribution of social resource. There have been plenty of literature\cite{bowles2019neolithic} that illustrate the interplay between social development and injustice. Regional development is complex and is affected by different determinants in different time. For example, in Hebei province of China, the largest city Shijiazhuang started to develop fast since it is the crossroad of railways. Jilin City in Jilin province used to be the capital of Jilin province until Changchun, from 1954, replaced its status. Obviously, these are redistributions of social resource. In many literature, social injustice is strengthened by the technical revolutions. Stately, agricultural society is more likely to store fortune overtime than nomadic society\cite{doi:10.1086/701789}. The Gini coefficients in ancient society is also increasing as the productivity grows\cite{kohler2017greater}. We read this as inequality of human society is born with the desire of better life. 
+
+But what is more interesting is that, when doesn't the rich get richer? In this Letter we give a possible explanation that the \emph{memory} of human society is the force of future endeavour. A city's future ability to develop is based on the active population brought by the existing active people. The limited resource is dynamically divided by increasing number of cities, so that there is, though small, but still some odd of overturn. In the following text, we first derive an approximated solution of this problem. We denote the coins share in the $k$th largest city as $n_k$, and investigate the probability that the second largest city becoming the largest, $P_{\text{overturn}}$. In $m$ successive additions of meta-population from the moment $t_l$, the chance for $n_2(t_l+m)\ge n_1(t_l+m)$ is equivalent to the case that the city $2$ is picked $n_1(t_l)-n_2(t_l)$ times more than city $1$. The probability of $n_1(t_l)-n_2(t_l)$ picks of city $2$ in a row is $\frac{n_1!}{n_2!}/N^{n_1-n_2}$. Adding another step brings an probability of $n_1/N$ for $n_1$ to increase to $n_1+1$. So the process ends at $n_1(t_l)-n_2(t_l)+1$ steps is the former probability times $(n_1+1)/N$ and plus a expected latent step length. 
+
+\subsection{Urban shrinkage}
+
+The urban development is a sequel of the spatial distribution of existing resource. Thus the preferential attachment is not only performed among people, but also on urban land-use. The concentration of urban resource result in urban shrinkage, indicating that the popular definition of resource distribution, say Gross Democratic Product (GDP), may not be the best indicator of regional fortune, since it is not a perfect indication of a place's future. Urban shrinking is widely discussed in recent years. It is always referred with demographic changes such as decreasing fertility, aging, and out-migration\cite{haase2008urban}. In the comprehension of urban input-output framework, the governmental investment cannot follow up with the spatial growth of population. So the further investment can only go to \emph{active} area where recent comers to the cities are mostly found. 
+
+We conduct a cell-wise analysis. The speed of a cell's losing active population equals to the speed of others' adding, $[(N^*-n)\beta_2 +k \beta_1]\cdot n/N^*$; The speed of its own adding is $n\beta_2$. Thus the equilibrium condition is \[ [(N^*-n)\beta_2+k\beta_1]\cdot \frac{n}{N^*} = \beta_2N^*. \] The equilibrium $n_eq = k/\beta$. This means that whether a spot in city will be prosperous  has nothing to do with the regional resource $N^*$, but it is related to the strong force of emergence of cities.
+\end{widetext}
